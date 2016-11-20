@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Messages View Controller-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qkL-Od-lgU"/>
+                        <viewControllerLayoutGuide type="bottom" id="n38-gi-rB5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="89b-cO-6ok">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jb4-2A-rU4">
+                                    <size key="itemSize" width="200" height="158"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imessageCell" id="8WF-dL-FRf">
+                                        <rect key="frame" x="60" y="0.0" width="200" height="158"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="158"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frenchie-pebbles.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hL0-dd-gPn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="127"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="127" id="sCf-iz-0bw"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCg-ZQ-Xe9">
+                                                    <rect key="frame" x="5" y="133" width="187" height="11"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="NCg-ZQ-Xe9" firstAttribute="leading" secondItem="8WF-dL-FRf" secondAttribute="leading" constant="5" id="4Z2-25-dzy"/>
+                                            <constraint firstItem="hL0-dd-gPn" firstAttribute="top" secondItem="8WF-dL-FRf" secondAttribute="top" id="bPh-4e-TxY"/>
+                                            <constraint firstAttribute="trailing" secondItem="hL0-dd-gPn" secondAttribute="trailing" id="gAw-0h-Its"/>
+                                            <constraint firstItem="hL0-dd-gPn" firstAttribute="leading" secondItem="8WF-dL-FRf" secondAttribute="leading" id="le6-38-NyX"/>
+                                            <constraint firstItem="NCg-ZQ-Xe9" firstAttribute="top" secondItem="hL0-dd-gPn" secondAttribute="bottom" constant="6" id="tON-5b-9Qb"/>
+                                            <constraint firstAttribute="trailing" secondItem="NCg-ZQ-Xe9" secondAttribute="trailing" constant="8" id="urs-c5-xm3"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ObA-dk-sSI" id="cTQ-c1-QiK"/>
+                                    <outlet property="delegate" destination="ObA-dk-sSI" id="Yhz-pD-sU8"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="89b-cO-6ok" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" id="0P9-RO-lwE"/>
+                            <constraint firstItem="89b-cO-6ok" firstAttribute="top" secondItem="zMn-AG-sqS" secondAttribute="top" id="8dy-nR-0Gm"/>
+                            <constraint firstAttribute="trailing" secondItem="89b-cO-6ok" secondAttribute="trailing" id="MEV-cI-oF9"/>
+                            <constraint firstItem="n38-gi-rB5" firstAttribute="top" secondItem="89b-cO-6ok" secondAttribute="bottom" id="q9l-uw-LhO"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="collectionView" destination="89b-cO-6ok" id="h7O-XB-ZOh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.59999999999999" y="138.53073463268368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="frenchie-pebbles.jpg" width="800" height="570"/>
+    </resources>
+</document>
