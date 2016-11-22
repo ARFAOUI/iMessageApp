@@ -43,6 +43,7 @@
 
 -(void)didStartSendingMessage:(MSMessage *)message conversation:(MSConversation *)conversation {
     // Called when the user taps the send button.
+  
 }
 
 -(void)didCancelSendingMessage:(MSMessage *)message conversation:(MSConversation *)conversation {
@@ -86,16 +87,15 @@
     [self.currentMessage setSummaryText:@"this is a test"];
     
     MSMessageTemplateLayout* layout = [MSMessageTemplateLayout new];
-    [layout setMediaFileURL:[NSURL URLWithString:@"https://httpsimage.com/img/teacup-french-bulldog-wallpaper-1.jpg"]];
+    //[layout setMediaFileURL:[NSURL URLWithString:@"https://httpsimage.com/img/teacup-french-bulldog-wallpaper-1.jpg"]];
     [layout setImage:[UIImage imageNamed:@"frenchie-pebbles.jpg"]];
     [layout setCaption:@"very sweet frenchies"];
-    
+    [layout setSubcaption:@"subcaption here !"];
+    [layout setImageSubtitle:@"this is the image subtitle"];
+    [layout setImageTitle:@"this is the image title"];
     [self.currentMessage setLayout:layout];
-    __weak typeof(self) weakSelf = self;
     [self.currentConversation insertMessage:self.currentMessage completionHandler:^(NSError* error){
-        [weakSelf.currentConversation insertText:@"http://google.com" completionHandler:^(NSError* error){
-            
-        }];
+       
     }];
     
   
