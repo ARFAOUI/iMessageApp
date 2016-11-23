@@ -87,7 +87,7 @@
 #pragma sending message handling
 - (void)buildMessage:(float)index{
   
-    [self.currentConversation insertText:@"lien : http://www.imdb.com/showtimes/title/tt1679335/DE/10117?ref=iosp_im" completionHandler:^(NSError * error) {
+    [self.currentConversation insertText:@"lien : http://www.imdb.com/showtimes/title/tt1679335/DE/10117" completionHandler:^(NSError * error) {
         
     }];
     
@@ -101,9 +101,5 @@
     [self.currentMessage setLayout:layout];
     [self.currentConversation insertMessage:self.currentMessage completionHandler:^(NSError* error){}];
 
-    
-  
-  
-    
 }
 @end
