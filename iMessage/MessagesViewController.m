@@ -87,9 +87,20 @@
 #pragma sending message handling
 - (void)buildMessage:(float)index{
   
-    [self.currentConversation insertText:@"this is a test this is a serious message for people testing the app http://www.imdb.com/showtimes/title/tt1679335/DE/10117?ref=iosp_im" completionHandler:^(NSError * error) {
+    [self.currentConversation insertText:@"lien : http://www.imdb.com/showtimes/title/tt1679335/DE/10117?ref=iosp_im" completionHandler:^(NSError * error) {
         
     }];
+    
+    self.currentMessage = [MSMessage new];
+    MSMessageTemplateLayout* layout = [MSMessageTemplateLayout new];
+    [layout setImage:[UIImage imageNamed:@"frenchie-pebbles.jpg"]];
+    [layout setCaption:@"very sweet frenchies"];
+    [layout setSubcaption:@"subcaption here !"];
+    [layout setImageSubtitle:@"this is the image subtitle"];
+    [layout setImageTitle:@"this is the image title"];
+    [self.currentMessage setLayout:layout];
+    [self.currentConversation insertMessage:self.currentMessage completionHandler:^(NSError* error){}];
+
     
   
   
