@@ -68,7 +68,11 @@
     return 20;
 }
 
-
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake(170, 180);
+}
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"imessageCell";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier
@@ -82,20 +86,9 @@
 
 #pragma sending message handling
 - (void)buildMessage:(float)index{
-    self.currentMessage = [MSMessage new];
-    [self.currentMessage setURL:[NSURL URLWithString:@"https://google.de"]];
-    [self.currentMessage setSummaryText:@"this is a test"];
-    
-    MSMessageTemplateLayout* layout = [MSMessageTemplateLayout new];
-    //[layout setMediaFileURL:[NSURL URLWithString:@"https://httpsimage.com/img/teacup-french-bulldog-wallpaper-1.jpg"]];
-    [layout setImage:[UIImage imageNamed:@"frenchie-pebbles.jpg"]];
-    [layout setCaption:@"very sweet frenchies"];
-    [layout setSubcaption:@"subcaption here !"];
-    [layout setImageSubtitle:@"this is the image subtitle"];
-    [layout setImageTitle:@"this is the image title"];
-    [self.currentMessage setLayout:layout];
-    [self.currentConversation insertMessage:self.currentMessage completionHandler:^(NSError* error){
-       
+  
+    [self.currentConversation insertText:@"this is a test this is a serious message for people testing the app http://www.imdb.com/showtimes/title/tt1679335/DE/10117?ref=iosp_im" completionHandler:^(NSError * error) {
+        
     }];
     
   
